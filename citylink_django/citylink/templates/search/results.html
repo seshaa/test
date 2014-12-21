@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% load search_tags %}
+{% block content %}
+{% if state_found %}
+	<div style="color:blue">Clickable Cities for: '{{ q }}' grouped by County</div>
+	{% regroup cities|dictsort:"county_name" by county_name as county_name_list %}
+
+	<ul>
+	{% for county_name in county_name_list %}
+	    <li>{{ county_name.grouper }}
+	    <ul>
+	        {% for item in county_name.list %}
+	          <li><a href={{ item.url }}>{{ item.name }}</a></li>
+	        {% endfor %}
+	    </ul>
+	    </li>
+	{% endfor %}
+	</ul>
+	
+ {% else %}
+        '{{ q }}' is not a valid state. Please enter a valid 2-letter state.
+{% endif %}
+{% endblock %}
+        

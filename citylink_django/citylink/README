@@ -1,0 +1,26 @@
+Add the project to your system's PYTHONPATH
+-------------------------------------------
+Make sure that the citylink directory where you put your project on your machine is on your system's PYTHONPATH. 
+
+
+Udate the database settings in your settings.py file to match the values you used above. 
+
+
+Other Requirements
+------------------
+
+Django-Tagging
+URL: http://code.google.com/p/django-tagging/
+Instructions: After downloading the project files above, put the 'tagging' directory onto your system's PYTHONPATH
+
+Django DB Log
+URL: http://github.com/dcramer/django-db-log
+Instructions: Put the 'djangodblog' directory onto your system's PYTHONPATH
+
+In order to use the CACHE_BACKEND in settings.py, you need to also install a Memcached server on your local development machine.
+URL: http://www.danga.com/memcached/
+Instructions: Install per the documentation for your operating system. After doing so, uncomment and (if necessary) update the 
+CACHE_BACKEND value in settings.py.
+
+Before using, be sure to generate a long random string of characters for the SECRET_KEY value in settings.py.
+
